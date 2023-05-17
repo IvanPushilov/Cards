@@ -1,18 +1,17 @@
 const React = require('react');
-const Card = require('./Card');
 const Layout = require('./Layout');
-// const Form = require('./Form');
+const Card = require('./Card');
 
-module.exports = function CardList({ cards, title, user }) {
+function Main({ user, cards }) {
   return (
-    <Layout title={title}>
-      <div className="Main">
+    <Layout user={user}>
+      <div className="cards-container">
         {cards.map((card) => (
           <Card key={card.id} card={card} />
         ))}
       </div>
-
-      {/* <Form /> */}
     </Layout>
   );
-};
+}
+
+module.exports = Main;
