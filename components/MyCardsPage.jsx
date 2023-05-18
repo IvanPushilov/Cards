@@ -11,13 +11,25 @@ function MyCardsPage({ user, cards }) {
           <label htmlFor="text-input" className="form-label">
             Введите название
           </label>
-          <input className="form-control" id="text-input" name="text" />
+          <input className="form-control" id="text-input" name="name" />
         </div>
         <div className="mb-3">
           <label htmlFor="image-input" className="form-label">
             Изображение
           </label>
-          <input className="form-control" id="image-input" name="image" />
+          <input className="form-control" id="image-input" name="url" />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="text-input" className="form-label">
+            Цена
+          </label>
+          <input className="form-control" id="text-input" name="price" />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="text-input" className="form-label">
+            Степень изношенности
+          </label>
+          <input className="form-control" id="text-input" name="destruction" />
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
@@ -28,7 +40,7 @@ function MyCardsPage({ user, cards }) {
           <Card key={card.id} card={card} showButtons />
         ))}
       </div>
-      {/* <script src="/js/edit-cards.js" defer /> */}
+      <script src="/js/edit-cards.js" defer />
     </Layout>
   );
 }
