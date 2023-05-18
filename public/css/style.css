@@ -23,3 +23,12 @@ q {
   position: absolute;
   margin-right: 850px;
 }
+
+.hidden {
+  display: none;
+}
+
+.visible{
+  display: block;
+  color: red;
+}

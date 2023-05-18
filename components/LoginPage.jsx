@@ -29,12 +29,14 @@ function LoginPage() {
             id="exampleInputPassword1"
           />
         </div>
+        <p className="hidden" id='error_message'>Неправильнй пароль, либо пользователь не существует!</p>
         <button type="submit" className="btn btn-primary">
           Вход
         </button>
       </form>
 
       <script src="/js/login.js" />
+      
     </Layout>
   );
 }

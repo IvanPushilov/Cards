@@ -11,6 +11,7 @@ function RegisterPage() {
             Город
           </label>
           <input
+          required
             type="name"
             name="city"
             className="form-control"
@@ -23,6 +24,7 @@ function RegisterPage() {
             Имя
           </label>
           <input
+          required
             type="name"
             name="name"
             className="form-control"
@@ -35,6 +37,7 @@ function RegisterPage() {
             Пароль
           </label>
           <input
+          required
             type="password"
             name="password"
             className="form-control"
@@ -46,12 +49,14 @@ function RegisterPage() {
             Повторить пароль
           </label>
           <input
+          required
             type="password"
             name="password2"
             className="form-control"
             id="exampleInputPassword2"
           />
         </div>
+        <p id='log_err' className="hidden"></p>
         <button type="submit" className="btn btn-primary">
           Регистрация
         </button>

@@ -27,6 +27,10 @@ form.addEventListener('submit', async (event) => {
   } else {
     // произошла ошибка, выводим сообщение
     const result = await response.json();
-    alert(result.message);
+     let res = JSON.stringify(result)
+      document.querySelector('#log_err').classList='visible'
+      document.querySelector('#log_err').innerHTML=result.message
+
+    
   }
 });
