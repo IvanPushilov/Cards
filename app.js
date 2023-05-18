@@ -1,4 +1,5 @@
 require('@babel/register');
+require('dotenv').config();
 const express = require('express');
 // const morgan = require('morgan');
 const path = require('path');
@@ -6,7 +7,7 @@ const getUser = require('./middleware/getUser');
 const ssr = require('./middleware/renderComponent');
 
 const app = express();
-const PORT = process.env;
+  const {PORT} = process.env;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(getUser);

@@ -16,7 +16,7 @@ function Card({ card, showButtons }) {
               <p className="card-text">
                 <small className="text-body-secondary">
                   city {card.User.city}
-                </small>
+                </small>c
               </p>
             </div>
           </div>
