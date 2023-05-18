@@ -1,5 +1,5 @@
-const React = require('react');
-const Navbar = require('./Navbar')
+const React = require("react");
+const Navbar = require("./Navbar");
 
 module.exports = function Layout({ title, children, user }) {
   return (
@@ -20,7 +20,10 @@ module.exports = function Layout({ title, children, user }) {
         <script defer src="/scripts/addCard.js" />
       </head>
       <body>
-        {children}
+        <header>
+          <Navbar user={user} />
+        </header>
+        <div className="container">{children}</div>
       </body>
     </html>
   );

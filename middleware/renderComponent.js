@@ -1,28 +1,25 @@
-const React = require("react");
-const ReactDOMServer = require("react-dom/server");
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
 
-function renderComponent(
-  reactComponent,
-  props = {},
-  options = { htmlOnly: false }
-) {
-  const reactElement = React.createElement(reactComponent, {
-    ...this.app.locals, // передать app.locals
-    ...this.locals, // передать res.locals
-    ...props, // передать пропсы
+function renderComponentMethod(component, props, options = { doctype: true }) {
+  const element = React.createElement(component, {
+    // отсюда в объект попадёт ключ user
+    // this - это res (так как renderComponentMethod - это метод объекта res)
+    ...this.locals,
+    // а это передаётся из роута
+    ...props,
   });
 
-  const html = ReactDOMServer.renderToStaticMarkup(reactElement);
-
-  if (options.htmlOnly) {
-    return html;
-  }
-  const document = `<!DOCTYPE html>${html}`;
-  this.send(document);
+  const html = ReactDOMServer.renderToStaticMarkup(element);
+  return options.doctype ? `<!DOCTYPE html>${html}` : html;
 }
-function ssr(req, res, next) {
-  res.renderComponent = renderComponent;
+
+// миддлварка запускается при каждом запросе
+function renderComponent(req, res, next) {
+  // она добавляет метод renderComponent в каждый объект res
+  res.renderComponent = renderComponentMethod;
+  // затем передаёт управление следующим миддлваркам и роутам
   next();
 }
 
-module.exports = ssr;
+module.exports = renderComponent;

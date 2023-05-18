@@ -1,4 +1,4 @@
-const { user } = require('../db/models');
+const { User } = require('../db/models');
 
 async function getUser(req, res, next) {
   // если пользователь авторизован получаем его из БД

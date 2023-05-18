@@ -16,7 +16,7 @@ function Navbar({ user }) {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/my-tweets">
+            <a className="nav-link" href="/my-cards">
               Личный кабинет
             </a>
           </li>

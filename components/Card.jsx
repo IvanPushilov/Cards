@@ -16,7 +16,7 @@ function Card({ card, showButtons }) {
               <p className="card-text">
                 <small className="text-body-secondary">
                   city {card.User.city}
-                </small>c
+                </small>
               </p>
             </div>
           </div>
@@ -24,8 +24,11 @@ function Card({ card, showButtons }) {
         {showButtons && (
           <>
             <form className="edit-card mb-3" style={{ display: 'none' }}>
-              <input name="text" defaultValue={card.text} />
-              <input name="image" defaultValue={card.image} />
+              <input name="name" defaultValue={card.name} />
+              <input name="url" defaultValue={card.url} />
+              <input name="price" defaultValue={card.price} />
+              <input name="destruction" defaultValue={card.destruction} />
+
             </form>
             <div className="btn-group" role="group" aria-label="Basic example">
               <button
