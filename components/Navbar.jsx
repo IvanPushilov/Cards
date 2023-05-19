@@ -21,12 +21,18 @@ function Navbar({ user, data }) {
             </a>
           </li>
           <li className="nav-item">
-          <button type="button" className="btn btn-light">
-              <img className="cart__image" src="https://w7.pngwing.com/pngs/13/220/png-transparent-shopping-cart-online-shopping-e-commerce-sign-up-button-text-rectangle-black.png" alt="Cart" />
-              <div className="cart__num" id="cart_num">
-                data.length
-              </div>
-            </button>
+            <a href="/basket">
+              <button type="button" className="btn btn-light">
+                <img
+                  className="cart__image"
+                  src="https://w7.pngwing.com/pngs/13/220/png-transparent-shopping-cart-online-shopping-e-commerce-sign-up-button-text-rectangle-black.png"
+                  alt="Cart"
+                />
+                <div className="cart__num" id="cart_num">
+                  0
+                </div>
+              </button>
+            </a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/auth/logout">
