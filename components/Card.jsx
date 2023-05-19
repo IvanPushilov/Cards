@@ -18,11 +18,18 @@ function Card({ card, showButtons }) {
                   city {card.User.city}
                 </small>
               </p>
+              <button
+              type="button"
+              className="by-card btn btn-primary by-the-card"
+            >
+              KUPIT
+            </button>
             </div>
           </div>
         </div>
         {showButtons && (
           <>
+          
             <form className="edit-card mb-3" style={{ display: 'none' }}>
               <input name="name" defaultValue={card.name} />
               <input name="url" defaultValue={card.url} />
@@ -30,6 +37,7 @@ function Card({ card, showButtons }) {
               <input name="destruction" defaultValue={card.destruction} />
 
             </form>
+            
             <div className="btn-group" role="group" aria-label="Basic example">
               <button
                 type="button"
@@ -51,6 +59,7 @@ function Card({ card, showButtons }) {
             >
               OK
             </button>
+
           </>
         )}
       </div>
