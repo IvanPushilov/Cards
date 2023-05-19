@@ -1,8 +1,8 @@
 const React = require('react');
 const { User } = require('../db/models');
-function Card({ card, showButtons }) {
+function Card({ card, showButtons, mmm }) {
   return (
-    <div className="ad-card mb-3" data-id={card.id} style={{ width: '740px' }}>
+    <div className="ad-card mb-3" data-id={card.id} style={{ width: '640px' }}>
       <div className="row g-0">
         <div className="col-md-4">
           <img alt='1' src={card.url} className="show-card img-fluid rounded-start" />
@@ -18,12 +18,12 @@ function Card({ card, showButtons }) {
                   city {card.User.city}
                 </small>
               </p>
-              <button
-              type="button"
+             {mmm && (<button 
+              
               className="by-card btn btn-primary by-the-card"
             >
               KUPIT
-            </button>
+            </button>)}
             </div>
           </div>
         </div>
