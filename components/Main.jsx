@@ -7,7 +7,7 @@ function Main({ user, cards }) {
     <Layout user={user}>
       <div className="cards-container">
         {cards.map((card) => (
-          <Card key={card.id} card={card} />
+          <Card key={card.id} card={card} mmm/>
         ))}
       </div>
     </Layout>

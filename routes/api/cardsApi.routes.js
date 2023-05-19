@@ -1,7 +1,7 @@
 const cardsApiRouter = require("express").Router();
 
 const CardViev = require("../../components/Card");
-const { Card, User } = require("../../db/models");
+const { Card, User ,Order,Basket} = require("../../db/models");
 
 cardsApiRouter.put("/:id", async (req, res) => {
   try {
@@ -56,4 +56,28 @@ cardsApiRouter.delete('/:id', async (req, res) => {
     res.json({ success: true });
   }
 });
+cardsApiRouter.post('/:id/bas', async (req,res)=>{
+  try {
+    const id = Number(req.params.id);
+    let order = await Order.findOne({where:{userId:req.session.userId,status:true}})
+    if(!order){
+       order = await Order.create({
+        userId: req.session.userId,
+        status: true
+      });
+    }
+    console.log(order,'order')
+    
+    await Basket.create({
+      orderId: order.id,
+      cardId:id
+    })
+  
+  const arrBasket = await Basket.findAll({where:{orderId:order.id}})
+  res.json(arrBasket)
+  } catch (error) {
+    console.log(error.message)
+  }
+
+})
 module.exports = cardsApiRouter;

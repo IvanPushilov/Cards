@@ -17,11 +17,11 @@ module.exports = function Layout({ title, children, user }) {
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossOrigin="anonymous"
         />
-        <script defer src="/scripts/addCard.js" />
+        <script defer src="/js/byCard.js" />
       </head>
-      <body>
+      <body className="body">
         <header>
-          <Navbar user={user} />
+          <Navbar user={user} /> <br />
         </header>
         <div className="container">{children}</div>
       </body>

@@ -1,6 +1,6 @@
 const React = require("react");
 
-function Navbar({ user }) {
+function Navbar({ user, data }) {
   return (
     <ul className="nav justify-content-end">
       <h1 className="app-name">Magic-Cards</h1>
@@ -21,10 +21,10 @@ function Navbar({ user }) {
             </a>
           </li>
           <li className="nav-item">
-            <button className="cart" id="cart">
-              <img className="cart__image" src="./images/cart.png" alt="Cart" />
+          <button type="button" className="btn btn-light">
+              <img className="cart__image" src="https://w7.pngwing.com/pngs/13/220/png-transparent-shopping-cart-online-shopping-e-commerce-sign-up-button-text-rectangle-black.png" alt="Cart" />
               <div className="cart__num" id="cart_num">
-                0
+                data.length
               </div>
             </button>
           </li>
