@@ -5,7 +5,7 @@ form.addEventListener('submit', async (event) => {
 
   // eslint-disable-next-line no-shadow
   const form = event.target;
-  const { name, city, password } = form;
+  const { name, password } = form;
 
   const response = await fetch('/api/auth/login', {
     method: 'POST',
@@ -22,5 +22,7 @@ form.addEventListener('submit', async (event) => {
 
   if (result.success) {
     window.location.href = '/';
+  }else{
+    document.querySelector('#error_message').classList='visible'
   }
 });

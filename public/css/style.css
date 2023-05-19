@@ -24,4 +24,12 @@ q {
 }
 .by-card {
   display: none;
+
+.hidden {
+  display: none;
+}
+
+.visible{
+  display: block;
+  color: red;
 }
