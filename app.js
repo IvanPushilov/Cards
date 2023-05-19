@@ -14,6 +14,7 @@ const mainRouter = require("./routes/views/main.routes");
 const authRouter = require("./routes/views/auth.routes");
 const authApiRouter = require("./routes/api/auth.routes");
 const cardsApiRouter = require("./routes/api/cardsApi.routes");
+// const basketRouter = require("./routes/views/basket.routes");
 
 // настраиваем сервер с помощью плагинов (миддлварок)
 app.use(session(sessionConfig));
@@ -28,6 +29,7 @@ app.use(mainRouter);
 app.use("/auth", authRouter);
 app.use("/api/auth", authApiRouter);
 app.use("/api/cards/", cardsApiRouter);
+// app.use("/basket", basketRouter);
 
 const { PORT } = process.env;
 app.listen(PORT, () => console.log(`вытри слезы ${PORT} порт заработал`));
