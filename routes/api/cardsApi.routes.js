@@ -54,12 +54,10 @@ cardsApiRouter.delete("/:id", async (req, res) => {
 
   // removedCount - количество удалённых записей
   if (removedCount === 0) {
-    res
-      .status(404)
-      .json({
-        success: false,
-        message: "Нет записи для удаления либо нет доступа",
-      });
+    res.status(404).json({
+      success: false,
+      message: "Нет записи для удаления либо нет доступа",
+    });
   } else {
     // зависит от реализации, что мы отправляем в json
     res.json({ success: true });

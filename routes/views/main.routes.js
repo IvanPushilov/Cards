@@ -7,11 +7,11 @@ mainRouter.get("/", async (req, res) => {
   try {
     const cards = await Card.findAll({
       order: [["createdAt", "DESC"]],
-      include:[
+      include: [
         {
-          model: User
-        }
-      ]
+          model: User,
+        },
+      ],
     });
     res.send(res.renderComponent(Main, { cards }));
   } catch (error) {
@@ -25,11 +25,11 @@ mainRouter.get("/my-cards", async (req, res) => {
     const cards = await Card.findAll({
       where: { userId: req.session.userId },
       order: [["createdAt", "DESC"]],
-      include:[
+      include: [
         {
-          model: User
-        }
-      ]
+          model: User,
+        },
+      ],
     });
     res.send(res.renderComponent(MyCardsPage, { cards }));
   } catch (error) {
@@ -53,15 +53,13 @@ mainRouter.post("/my-cards", async (req, res) => {
     res.sendStatus(500);
   }
 });
--
-mainRouter.post('/:id/delete', async (req, res) => {
+-mainRouter.post("/:id/delete", async (req, res) => {
   const id = Number(req.params.id);
   await Card.destroy({
     where: { id },
     userId: req.session.userId,
   });
-  res.redirect('/');
-}); 
-
+  res.redirect("/");
+});
 
 module.exports = mainRouter;

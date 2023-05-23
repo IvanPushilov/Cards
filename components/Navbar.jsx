@@ -29,7 +29,7 @@ function Navbar({ user, data }) {
                   alt="Cart"
                 />
                 <div className="cart__num" id="cart_num">
-                  0
+                  data.length
                 </div>
               </button>
             </a>

@@ -5,12 +5,12 @@ const Card = require('./Card');
 function Basket({ user, cards }) {
   return (
     <Layout user={user}>
-      <div className="cards-container">
+      <div className="btn">
         {cards.map((card) => (
           <Card key={card.id} card={card}/>
         ))}
       </div>
-      <script src="/js/edit-cards.js" defer />
+      <script src="/js/byCard.js" defer />
     </Layout>
   );
 }

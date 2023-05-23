@@ -1,5 +1,4 @@
 const React = require('react');
-const { User } = require('../db/models');
 function Card({ card, showButtons, mmm }) {
   return (
     <div className="ad-card mb-3" data-id={card.id} style={{ width: '640px' }}>
@@ -10,12 +9,12 @@ function Card({ card, showButtons, mmm }) {
         <div className="show-card col-md-8">
           <div className="card-body">
             <div className="show-card">
-              <h5 className="card-title">{card.name}</h5>
-              <p className="card-text">{card.price}</p>
-              <p className="card-text">{card.destruction}</p>
+              <h5 className="card-title">Карта{card.name}</h5>
+              <p className="card-text">Цена: {card.price} в мелких купюрах</p>
+              <p className="card-text">Степень изношенности: {card.destruction}</p>
               <p className="card-text">
                 <small className="text-body-secondary">
-                  city {card.User.city}
+                  город: {card.User.city}
                 </small>
               </p>
              {mmm && (<button 
